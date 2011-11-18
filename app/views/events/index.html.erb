@@ -1,26 +1,22 @@
 <h3>OpenSpaces do Mês</h3><br />
 <script language="javascript">
 $(document).ready(function() {
-
-    // page is now ready, initialize the calendar...
-
     $('#calendar').fullCalendar({
-        // put your options and callbacks here
 		events: [
 			<% @events.each do |event| %>
 				{
-					title: '<%= event.name%> (<%= event.date.strftime("%k:%M") %>)',
+					title: '<%= event.name %> (<%= event.date.strftime("%k:%M") %>) - \n\n\n <%= event.speaker %>',
 					start: '<%= event.date.strftime("%Y-%m-%d") %>'
 				},
 			<% end %>
 		
 		],
 		weekends: true,
-		header: false, 
-		theme: true
+		theme: true,
+		aspectRatio: 2
     })
 
 });
 </script>
 
-<div id='calendar'></div>
+<div id='calendar' style="width:800px;height:800px"></div>
