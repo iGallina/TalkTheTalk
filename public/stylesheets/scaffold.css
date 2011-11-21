@@ -30,6 +30,15 @@ div.field, div.actions {
   display: table;
 }
 
+div.div_center_aligned {
+	text-align: left;
+	padding: 20px;
+}
+
+.padded { 
+	padding-left: 20px;
+}
+
 #error_explanation {
   width: 450px;
   border: 2px solid red;

@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.xml
   def index
-    @events = Event.find(:all, :conditions => ['date >= ? and date <= ?', Time.now.at_beginning_of_month, Time.now.at_end_of_month], :order => 'date ASC')
+    @events = Event.all
 
     respond_to do |format|
       format.html # index.html.erb

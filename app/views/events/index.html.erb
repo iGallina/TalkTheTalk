@@ -1,22 +1,30 @@
-<h3>OpenSpaces do Mês</h3><br />
+<h1 class="padded">Talk The Talk - Openspaces</h1>
+<h4 class="padded">Aprenda, dissemine, discuta! Conhecimento é open source!</h4>
 <script language="javascript">
 $(document).ready(function() {
     $('#calendar').fullCalendar({
 		events: [
 			<% @events.each do |event| %>
 				{
-					title: '<%= event.name %> (<%= event.date.strftime("%k:%M") %>) - \n\n\n <%= event.speaker %>',
-					start: '<%= event.date.strftime("%Y-%m-%d") %>'
+					title: '<%= event.name %> (<%= event.date.strftime("%k:%M") %>)\n\n <%= event.speaker %>',
+					start: '<%= event.date.strftime("%Y-%m-%d") %>',
+					url: '/events/<%= event.id %>'
 				},
 			<% end %>
 		
 		],
 		weekends: true,
 		theme: true,
-		aspectRatio: 2
+		aspectRatio: 2,
+		eventClick: function(event) {
+		        if (event.url) {
+		            window.open(event.url);
+		            return false;
+		        }
+		}
     })
 
 });
 </script>
 
-<div id='calendar' style="width:800px;height:800px"></div>
+<div id='calendar' class="div_center_aligned"></div>
