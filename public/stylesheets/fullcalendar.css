@@ -279,9 +279,10 @@ a.fc-event {
 	}
 	
 .fc-event-skin {
-	border-color: #AED0EA;     /* default BORDER color */
-	background-color: #AED0EA; /* default BACKGROUND color */
-	color: #000000;            /* default TEXT color */
+	border-color: #E78F08;     /* default BORDER color */
+	background-color: #E78F08; /* default BACKGROUND color */
+	color: #ffffff;            /* default TEXT color */
+
 	}
 	
 .fc-event-inner {
