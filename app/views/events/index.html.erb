@@ -4,22 +4,34 @@ $(document).ready(function() {
 		events: [
 			<% @events.each do |event| %>
 				{
-					title: '<%= event.name %> (<%= event.date.strftime("%k:%M") %>)\n\n <%= event.speaker %>',
-					start: '<%= event.date.strftime("%Y-%m-%d") %>',
-					url: '/events/<%= event.id %>'
+					title: '<%= event.name %> - <%= event.speaker %>',
+					start: '<%= event.date.to_i %>',
+					url: '/events/<%= event.id %>',
+					time: '<%= event.date.strftime("%H:%M") %>',
+					description: '<%= event.description %>'
 				},
 			<% end %>
-		
 		],
+
 		weekends: true,
 		theme: true,
 		aspectRatio: 2,
+
 		eventClick: function(event) {
 		        if (event.url) {
 		            window.open(event.url);
 		            return false;
 		        }
 		},
+
+		eventRender: function(event, element) {	
+			// TODO: page will break if description contains line breaks
+			element.qtip({
+				content: "<b>Horário: </b>"+ event.time + "<br/><br/>" +
+					"<b>Descrição: </b>" + event.description
+			});
+		},
+
 		monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
 		monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
 		dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
@@ -33,7 +45,7 @@ $(document).ready(function() {
 			month: 'mês',
 			week: 'semana',
 			day: 'dia'
-		},		
+		},
 		titleFormat: {
 			month: 'MMMM yyyy',
 			week: "d [ yyyy]{ '&#8212;'[ MMM] d MMM yyyy}",
@@ -55,7 +67,11 @@ $(document).ready(function() {
 });
 </script>
 
-<h1 class="padded">Talk The Talk - Openspaces</h1>
-<h4 class="padded">Aprenda, <%= link_to 'dissemine', new_event_path %>, discuta! Conhecimento é open source!</h4>
+<center>
+  <div class="headmaster ui-widget-header">
+    <h1 class="padded">Talk The Talk - Openspaces</h1>
+    <h4 class="padded">Aprenda, <%= link_to 'dissemine', new_event_path %>, discuta! Conhecimento é open source!</h4>
+  </div>
+</center>
 
 <div id='calendar' class="div_center_aligned"></div>

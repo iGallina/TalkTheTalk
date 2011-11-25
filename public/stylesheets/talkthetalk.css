@@ -1,7 +1,7 @@
 body { background-color: #fff; color: #333; }
 
 body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: helvetica, verdana, sans-serif;
   font-size:   13px;
   line-height: 18px;
 }
@@ -12,7 +12,7 @@ pre {
   font-size: 11px;
 }
 
-a { color: #000; }
+a { color: #000; transition: all 0.2s linear; }
 a:visited { color: #666; }
 a:hover { color: #fff; background-color:#000; }
 
@@ -39,6 +39,14 @@ div.div_center_aligned {
 	padding-left: 20px;
 }
 
+.headmaster {
+	width: 70em;
+	text-align: left;
+	padding: 2em;
+	margin: 3em 3em 6em 3em;
+	text-shadow: .05em .05em .2em rgba(0, 0, 0, 1);
+	border-radius: 1em;
+}
 
 .ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
 .ui-timepicker-div dl{ text-align: left; }
@@ -70,3 +78,5 @@ div.div_center_aligned {
   font-size: 12px;
   list-style: square;
 }
+
+
