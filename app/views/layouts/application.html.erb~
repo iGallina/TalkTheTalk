@@ -2,7 +2,6 @@
 <html>
 <head>
   <title>Talkthetalk</title>
-  <%= javascript_include_tag :defaults %>
   <%= stylesheet_link_tag :all %>
   <%= stylesheet_link_tag "ui-lightness/theme" %>
   <%= javascript_include_tag "jquery-1.7.min" %>
@@ -11,6 +10,7 @@
   <%= javascript_include_tag "fullcalendar.min" %>
   <%= javascript_include_tag "jquery.datepicker.ui.pt-BR" %>
   <%= csrf_meta_tag %>
+  <%= javascript_include_tag :defaults %>
 </head>
 <body>
 
