@@ -50,13 +50,13 @@ div.div_center_aligned {
 	background: #ece8da url("/images/ui-bg_gloss-wave_100_ece8da_500x100.png") 50% 50% repeat-x;
 }
 
-/*
+
 .ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
 .ui-timepicker-div dl{ text-align: left; }
 .ui-timepicker-div dl dt{ height: 25px; }
 .ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
 .ui-timepicker-div td { font-size: 90%; }
-*/
+
 
 #error_explanation {
   width: 450px;
