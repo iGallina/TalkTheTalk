@@ -279,10 +279,9 @@ a.fc-event {
 	}
 	
 .fc-event-skin {
-	border-color: #E78F08;     /* default BORDER color */
-	background-color: #E78F08; /* default BACKGROUND color */
-	color: #ffffff;            /* default TEXT color */
-
+	border-color: #36c;     /* default BORDER color */
+	background-color: #36c; /* default BACKGROUND color */
+	color: #fff;            /* default TEXT color */
 	}
 	
 .fc-event-inner {
@@ -339,6 +338,7 @@ a.fc-event {
 .fc-event-hori .ui-resizable-handle {
 	_padding-bottom: 14px; /* IE6 had 0 height */
 	}
+	
 	
 	
 /* Fake Rounded Corners (for buttons and events)

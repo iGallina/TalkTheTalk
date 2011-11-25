@@ -5,9 +5,8 @@ $(document).ready(function() {
 			<% @events.each do |event| %>
 				{
 					title: '<%= event.name %> - <%= event.speaker %>',
-					start: '<%= event.date.to_i %>',
+					start: new Date(<%= event.date.year %>, <%= event.date.month-1 %>, <%= event.date.mday %>, <%= event.date.hour %>, <%= event.date.min %>),
 					url: '/events/<%= event.id %>',
-					time: '<%= event.date.strftime("%H:%M") %>',
 					description: '<%= event.description %>'
 				},
 			<% end %>
@@ -16,6 +15,7 @@ $(document).ready(function() {
 		weekends: true,
 		theme: true,
 		aspectRatio: 2,
+		allDayDefault: false,
 
 		eventClick: function(event) {
 		        if (event.url) {
@@ -26,11 +26,16 @@ $(document).ready(function() {
 
 		eventRender: function(event, element) {	
 			// TODO: page will break if description contains line breaks
-			element.qtip({
-				content: "<b>Horário: </b>"+ event.time + "<br/><br/>" +
-					"<b>Descrição: </b>" + event.description
-			});
+			if (event.description != "") {
+				element.qtip({
+					content: "<b>Descrição: </b>" + event.description
+				});
+			}
 		},
+
+		eventBackgroundColor: "#459e00",
+		eventBorderColor: "#327e04",
+		eventTextColor: "#ffffff",
 
 		monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
 		monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
@@ -46,6 +51,9 @@ $(document).ready(function() {
 			week: 'semana',
 			day: 'dia'
 		},
+		allDayText: 'dia todo',
+		
+		axisFormat: 'H:mm',
 		titleFormat: {
 			month: 'MMMM yyyy',
 			week: "d [ yyyy]{ '&#8212;'[ MMM] d MMM yyyy}",
@@ -56,11 +64,9 @@ $(document).ready(function() {
 			week: 'ddd d/M',
 			day: 'dddd d/M'
 		},
-		allDayText: 'dia todo',
-		axisFormat: 'H:mm',
 		timeFormat: {
-			'': 'H(:mm)',
-			agenda: 'H:mm{ - H:mm}'
+			'': 'H(:mm)tt{ - H:mmtt}',
+			agenda: 'H:mmtt{ - H:mmtt}'
 		}
     })
 
@@ -68,10 +74,10 @@ $(document).ready(function() {
 </script>
 
 <center>
-  <div class="headmaster ui-widget-header">
+  <div class="headmaster">
     <h1 class="padded">Talk The Talk - Openspaces</h1>
     <h4 class="padded">Aprenda, <%= link_to 'dissemine', new_event_path %>, discuta! Conhecimento é open source!</h4>
   </div>
 </center>
 
-<div id='calendar' class="div_center_aligned"></div>
+<div id="calendar" class="div_center_aligned"></div>
