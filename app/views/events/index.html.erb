@@ -28,7 +28,8 @@ $(document).ready(function() {
 			// TODO: page will break if description contains line breaks
 			if (event.description != "") {
 				element.qtip({
-					content: "<b>Descrição: </b>" + event.description
+					content: "<b>Descrição: </b>" + event.description,
+					position: { viewport: $(window) }
 				});
 			}
 		},
