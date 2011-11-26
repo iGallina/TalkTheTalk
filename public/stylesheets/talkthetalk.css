@@ -20,16 +20,6 @@ div.field, div.actions {
   margin-bottom: 10px;
 }
 
-#notice {
-  color: green;
-}
-
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-
 div.div_center_aligned {
 	text-align: left;
 	padding: 20px;
@@ -58,21 +48,43 @@ h1, h2, h3, h4, h5 {
 	margin: 3em 3em 6em 3em;
 	color: #327e04;
 	border-radius: 1em;
-	background: #ece8da 50% 50% repeat-x;
+	background: #ece8da;
 }
 
-.ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
-.ui-timepicker-div dl{ text-align: left; }
-.ui-timepicker-div dl dt{ height: 25px; }
-.ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
-.ui-timepicker-div td { font-size: 90%; }
+label {
+	text-align: right;
+	float: left;
+	width: 10em;
+	line-height: 2em;
+	padding-top: 0.4em;
+	text-shadow: .05em .05em .05em rgba(0, 0, 0, .3);
+}
+
+input, textarea {
+	border-radius: 0.2em;
+	transition: border linear 0.2s, box-shadow linear 0.2s;
+	border: solid 1px #ccc;
+	padding: 0.5em;
+	margin-left: 1em;
+}
+
+input:focus, textarea:focus {
+	box-shadow: inset 0 0.2em .2em rgba(0, 0, 0, 0.1), 0 0 1em rgba(62, 133, 19, 0.6);
+}
+
+.field_with_errors {
+  border-radius: 0.5em;
+  box-shadow: inset 0 0.2em .2em rgba(0, 0, 0, 0.1), 0 0 1em rgba(255, 0, 0, 0.9);
+}
+
+
 
 #error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
+  width: 30em;
+  box-shadow: inset 0 0.2em .2em rgba(0, 0, 0, 0.1), 0 0 1em rgba(255, 0, 0, 0.9);
+  border-radius: 0.5em;
+  padding: 0.5em;
+  margin: 3em;
   background-color: #f0f0f0;
 }
 
@@ -83,8 +95,7 @@ h1, h2, h3, h4, h5 {
   font-size: 12px;
   margin: -7px;
   margin-bottom: 0px;
-  background-color: #c00;
-  color: #fff;
+  border-radius: 1em;
 }
 
 #error_explanation ul li {
