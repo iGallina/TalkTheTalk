@@ -1,9 +1,12 @@
-body { background-color: #377d00; color: #333; }
+body { 
+  background-color: #377d00; 
+  color: #333; 
+}
 
 body, p, ol, ul, td {
   font-family: georgia, helvetica, verdana, sans-serif;
-  font-size:   13px;
-  line-height: 18px;
+  font-size:   1em;
+  line-height: 1.2em;
 }
 
 pre {
@@ -14,69 +17,74 @@ pre {
 
 a { color: #333; transition: all 0.2s linear; }
 a:visited { color: #666; }
-a:hover { color: #000; background: #ccc; }
+a:hover { color: #000; background: #ddd; }
+
 
 div.field, div.actions {
   margin-bottom: 10px;
 }
 
-div.div_center_aligned {
-	text-align: left;
-	padding: 20px;
+div.center_aligned {
+  text-align: left;
+  padding: 2em;
 }
 
 h1, h2, h3, h4, h5 {
-	text-shadow: .1em .1em .1em rgba(0, 0, 0, .3);
+  text-shadow: .1em .1em .1em rgba(0, 0, 0, .3);
 }
 
 .padded { 
-	padding-left: 20px;
+  padding-left: 20px;
 }
 
 .headmaster {
-	width: 70em;
-	text-align: left;
-	padding: 2em;
-	margin: 3em 3em 6em 3em;
-	color: #327e04;
-	border-radius: 1em;
-	background: #ece8da url("/images/ui-bg_gloss-wave_100_ece8da_500x100.png") 50% 50% repeat-x;
+  text-align: left;
+  padding: 2em;
+  margin: 3em 10em 6em 10em;
+  color: #327e04;
+  border-radius: 1em;
+  background: #ece8da url("/images/ui-bg_gloss-wave_100_ece8da_500x100.png") 50% 50% repeat-x;
 }
 
 .container {
-	padding: 2em;
-	margin: 3em 3em 6em 3em;
-	color: #327e04;
-	border-radius: 1em;
-	background: #ece8da;
+  padding: 2em;
+  margin: 3em 3em 6em 3em;
+  color: #327e04;
+  border-radius: 1em;
+  background: #ece8da;
 }
 
 label {
-	text-align: right;
-	float: left;
-	width: 10em;
-	line-height: 2em;
-	padding-top: 0.4em;
-	text-shadow: .05em .05em .05em rgba(0, 0, 0, .3);
+  text-align: right;
+  float: left;
+  width: 10em;
+  line-height: 2em;
+  padding-top: 0.15em;
+  text-shadow: .08em .08em .08em rgba(0, 0, 0, .5);
 }
 
 input, textarea {
-	border-radius: 0.2em;
-	transition: border linear 0.2s, box-shadow linear 0.2s;
-	border: solid 1px #ccc;
-	padding: 0.5em;
-	margin-left: 1em;
+  border-radius: 0.5em;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+  border: solid 1px #ccc;
+  padding: 0.5em;
+  margin-left: 2em;
 }
 
 input:focus, textarea:focus {
-	box-shadow: inset 0 0.2em .2em rgba(0, 0, 0, 0.1), 0 0 1em rgba(62, 133, 19, 0.6);
+  box-shadow: inset 0 0.2em .2em rgba(0, 0, 0, 0.1), 0 0 1em rgba(62, 133, 19, 0.6);
 }
+
+.actions {
+  padding: 2em;
+  text-align: left;
+}
+
 
 .field_with_errors {
   border-radius: 0.5em;
   box-shadow: inset 0 0.2em .2em rgba(0, 0, 0, 0.1), 0 0 1em rgba(255, 0, 0, 0.9);
 }
-
 
 
 #error_explanation {
@@ -92,14 +100,14 @@ input:focus, textarea:focus {
   text-align: left;
   font-weight: bold;
   padding: 5px 5px 5px 15px;
-  font-size: 12px;
+  font-size: 0.9em;
   margin: -7px;
   margin-bottom: 0px;
   border-radius: 1em;
 }
 
 #error_explanation ul li {
-  font-size: 12px;
+  font-size: 0.9em;
   list-style: square;
 }
 
