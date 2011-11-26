@@ -6,7 +6,6 @@
   <%= javascript_include_tag "jquery-ui-1.8.16.custom.min" %>
   <%= javascript_include_tag "jquery-ui-timepicker-addon" %>
   <%= javascript_include_tag "jquery.qtip.min" %>
-  <!-- <%= javascript_include_tag :defaults %> -->
   <%= javascript_include_tag "fullcalendar.min" %>
   <%= javascript_include_tag "jquery.datepicker.ui.pt-BR" %>
   <%= javascript_include_tag "prefixfree.min" %>
@@ -16,7 +15,17 @@
 </head>
 <body>
 
+<center>
+  <div class="headmaster">
+    <h1 class="padded">Talk The Talk - Openspaces</h1>
+    <h4 class="padded">Aprenda, <%= link_to 'dissemine', new_event_path %>, discuta! Conhecimento é open source!</h4>
+  </div>
+</center>
+
+<div class="container">
 <%= yield %>
+</div>
+
 
 </body>
 </html>
