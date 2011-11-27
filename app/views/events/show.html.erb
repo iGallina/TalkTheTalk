@@ -2,26 +2,26 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Date:</b>
+  <b><%= Event.human_attribute_name("date") %>:</b>
   <%= @event.date %>
 </p>
 
 <p>
-  <b>Name:</b>
-  <%= @event.name %>
+  <b><%= Event.human_attribute_name("title") %>:</b>
+  <%= @event.title %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b><%= Event.human_attribute_name("description") %>:</b>
   <%= @event.description %>
 </p>
 
 <p>
-  <b>Speaker:</b>
+  <b><%= Event.human_attribute_name("speaker") %>:</b>
   <%= @event.speaker %>
 </p>
 
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %> |
-<%= link_to 'Destroy', @event, :confirm => 'Are you sure?', :method => :delete %>
+<%= link_to t('.edit', :default => 'Edit'), edit_event_path(@event) %> |
+<%= link_to t('.back', :default => 'Back'), events_path %> |
+<%= link_to t('.destroy', :default => 'Destroy'), @event, :confirm => t('.confirm_destroy', :default => 'Are you sure?'), :method => :delete %>

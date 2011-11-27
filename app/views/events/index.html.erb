@@ -4,7 +4,7 @@ $(document).ready(function() {
 		events: [
 			<% @events.each do |event| %>
 			{
-				'title': '<%= event.name %> - <%= event.speaker %>',
+				'title': '<%= event.title %> - <%= event.speaker %>',
 				'start': '<%= event.date.strftime("%a, %d %b %Y %H:%M:%S %Z") %>',
 				'url': '/events/<%= event.id %>',
 				'description': '<%= event.description.gsub("\r\n", "\\n") %>'

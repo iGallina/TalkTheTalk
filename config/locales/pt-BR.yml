@@ -250,6 +250,11 @@
     new:
       header: 'Novo evento'
       back: 'Voltar'
+    show:
+      edit: 'Alterar'
+      back: 'Voltar'
+      destroy: 'Apagar'
+      confirm_destroy: 'Realmente apagar este evento?'
     edit:
       header: 'Alterar evento'
       show: 'Mostrar'

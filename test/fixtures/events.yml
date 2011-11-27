@@ -2,12 +2,12 @@
 
 one:
   date: 2011-11-17 21:48:06
-  name: MyString
+  title: MyString
   description: MyText
   speaker: MyString
 
 two:
   date: 2011-11-17 21:48:06
-  name: MyString
+  title: MyString
   description: MyText
   speaker: MyString
