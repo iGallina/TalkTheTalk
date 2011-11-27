@@ -228,9 +228,16 @@
         <<: *errors_messages
       template:
         <<: *errors_template
-
       full_messages:
         format: "%{attribute} %{message}"
+    models:
+      event: 'Evento'
+    attributes:
+      event:
+        title: 'Título'
+        date: 'Data'
+        speaker: 'Palestrante'
+        description: 'Descrição'
 
 
   # talkthetalk strings
@@ -241,6 +248,7 @@
 
   events:
     new:
+      header: 'Novo evento'
       back: 'Voltar'
     edit:
       header: 'Alterar evento'
