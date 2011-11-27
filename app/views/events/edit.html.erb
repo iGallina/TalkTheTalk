@@ -1,4 +1,4 @@
-<h1>Alterar evento</h1>
+<h1><%= t('.header', :default => 'Update event') %></h1>
 
 <%= javascript_tag do %>
   $(document).ready(function() {
@@ -11,5 +11,6 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+<%= link_to t('.show', :default => 'Show'), @event %> |
+<%= link_to t('.back', :default => 'Back'), events_path %>
+

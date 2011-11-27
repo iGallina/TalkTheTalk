@@ -3,12 +3,12 @@ $(document).ready(function() {
     $('#calendar').fullCalendar({
 		events: [
 			<% @events.each do |event| %>
-				{
-					title: '<%= event.name %> - <%= event.speaker %>',
-					start: new Date(<%= event.date.year %>, <%= event.date.month-1 %>, <%= event.date.mday %>, <%= event.date.hour %>, <%= event.date.min %>),
-					url: '/events/<%= event.id %>',
-					description: '<%= event.description %>'
-				},
+			{
+				'title': '<%= event.name %> - <%= event.speaker %>',
+				'start': '<%= event.date.strftime("%a, %d %b %Y %H:%M:%S %Z") %>',
+				'url': '/events/<%= event.id %>',
+				'description': '<%= event.description.gsub("\r\n", "\\n") %>'
+			},
 			<% end %>
 		],
 
@@ -24,11 +24,10 @@ $(document).ready(function() {
 		        }
 		},
 
-		eventRender: function(event, element) {	
-			// TODO: page will break if description contains line breaks
+		eventRender: function(event, element) {
 			if (event.description != "") {
 				element.qtip({
-					content: "<b>Descrição: </b>" + event.description,
+					content: "<b><%= t('.description', :default => 'Description: ') %></b>" + event.description,
 					position: { viewport: $(window) }
 				});
 			}
@@ -74,4 +73,9 @@ $(document).ready(function() {
 });
 </script>
 
+
 <div id="calendar" class="center_aligned"></div>
+
+
+
+

@@ -1,7 +1,7 @@
 <%= form_for(@event) do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
-      <h2>O evento não pôde ser adicionado devido a <%= pluralize(@event.errors.count, "erro") %>:</h2>
+      <h2><%= t('.error_explanation_header', :default => 'Event could not be added due to %{count_errors}: ', :count_errors => pluralize(@event.errors.count, t('.error', :default => 'error'))) %></h2>
 
       <ul>
       <% @event.errors.full_messages.each do |msg| %>
@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :speaker %>
+    <%= f.text_field :speaker %>
+  </div>
+
+  <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
@@ -24,11 +29,6 @@
   <div class="field">
     <%= f.label :description %>
     <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :speaker %>
-    <%= f.text_field :speaker %>
   </div>
 
   <div class="actions">
