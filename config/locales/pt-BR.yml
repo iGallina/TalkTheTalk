@@ -269,5 +269,5 @@
     application:
       title: 'TalkTheTalk'
       subtitle: 'Aprenda, dissemine, discuta!'
-
+      add_event: 'Adicionar evento'
 
