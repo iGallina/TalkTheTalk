@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5 {
 
 .btn {
   background: #ece8da;
-  background-image(bottom, rgb(242, 238, 225) 54%, rgb(242, 238, 225) 7%;
+  background-image: bottom, rgb(242, 238, 225) 54%, rgb(242, 238, 225) 7%;
   text-shadow: .05em .05em .05em rgba(0, 0, 0, .5);
   text-decoration: none;
   font-size: 1.2em;
